@@ -3,17 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "test": "echo\"Error: no test specified\"&& exit 1",
     "server": "nodemon server.js",
     "client": "yarn start --prefix client",
     "dev": "concurrently \"yarn run  server\" \"yarn run client\"",
-    "heroku-postbuild": "YARN_CONFIG_PRODUCTION=false yarn add --prefix client && yarn run build --prefix client"
+    "heroku-postbuild": "YARN_PRODUCTION=false yarn add --prefix client && yarn run build --prefix client"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "babel-cli": "^6.26.0",
+    "body-parser": "^1.20.0",
     "concurrently": "^7.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
